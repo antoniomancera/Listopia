@@ -1,0 +1,17 @@
+
+
+<table>
+  <thead>
+  </thead>
+  <tbody>
+
+
+      <div *ngFor="let book of books">
+          <h4 class="prueba">
+              <p> {{book.volumeInfo['title']}}</p>
+<p><img src={{book.volumeInfo.imageLinks.thumbnail}}></p>
+
+          </h4>
+      </div>
+  </tbody>
+</table>
