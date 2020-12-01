@@ -16,7 +16,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" ngModel="pruebamodel">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="nombre" name="prueba">
       <button class="btn btn-outline-success my-2 my-sm-0" id="prueba" type="submit"  [routerLink]="['/busquedaavanzada']"  [routerLinkActive]="['active']"  >Search</button>
     </form>
   </div>

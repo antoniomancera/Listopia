@@ -9,6 +9,7 @@ import {   RouterModule } from '@angular/router';
 import {APP_ROUTES} from './app.rutas';
 import { HttpClientModule } from "@angular/common/http";
 import { BusquedaavanzadaComponent } from './busquedaavanzada/busquedaavanzada.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { BusquedaavanzadaComponent } from './busquedaavanzada/busquedaavanzada.c
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule,
     RouterModule,
     RouterModule.forRoot(APP_ROUTES)

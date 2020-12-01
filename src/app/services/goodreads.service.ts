@@ -1,7 +1,7 @@
 
 import { HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { HttpClientModule } from "@angular/common/http";
-
+import { Component, Input } from '@angular/core'
 import { Injectable } from '@angular/core';
 import { Observable, pipe, throwError } from 'rxjs';
 
@@ -10,6 +10,8 @@ import { Book } from '../interfaces/book';
 import {VolumeInfo} from '../interfaces/volume-info';
 import {DateBooks} from '../interfaces/date-books';
 import { stringify } from 'querystring';
+import {Docs} from '../interfaces/openlibrary/docs';
+import {OpenDataBooks} from '../interfaces/openlibrary/open-data-books';
 
 
 @Injectable({
@@ -18,6 +20,7 @@ import { stringify } from 'querystring';
 export class GoodreadsService {
 libros:DateBooks;
 libro:Book[];
+@Input () value: string;
 
   constructor(
     public http:HttpClient
@@ -43,12 +46,10 @@ public getBooks3(busqueda:string): Observable<DateBooks>{
 
   }
 
+public getBooksOpen():Observable<OpenDataBooks>{
+  return this.http.get<OpenDataBooks>('http://openlibrary.org/search.json?q=the+lord+of+the+rings');
+}
 
-  search(value: string):Book[]{
-    this.http.get(`https://www.googleapis.com/books/v1/volumes?q=${value}`)
-                    .pipe(map(response => this.libro.push(response['items'])))
-                    return this.libro;
-  }
 
 
 }

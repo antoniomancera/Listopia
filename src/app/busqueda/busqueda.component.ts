@@ -5,6 +5,8 @@ import {DateBooks} from '../interfaces/date-books';
 
 import { GoodreadsService} from '../services/goodreads.service';
 import {Observable} from 'rxjs';
+import { Docs } from '../interfaces/openlibrary/docs';
+import { OpenDataBooks } from '../interfaces/openlibrary/open-data-books';
 
 @Component({
   selector: 'app-busqueda',
@@ -14,56 +16,58 @@ import {Observable} from 'rxjs';
 export class BusquedaComponent implements OnInit {
 
  books1:DateBooks;
+ books2p:DateBooks;
+ booksp:Book[];
  books:Book[];
 public libro:Promise<Observable<Book[]>>;
 public libro2:Promise<any[]>;
 public libro1:Book[];
 prueba:number[]=[1,2,3,4];
+
+bookdocs:Docs;
+booksdocstitle:string[];
+
+Docopen:OpenDataBooks;
+Docopenbook:Docs[];
+
+titulo:string;
+tit:string;
+p:string;
+
+
   constructor(private GoodreadsService:GoodreadsService) { }
 
   ngOnInit() {
-    //this.libro=this.GoodreadsService.getBooks();
-    //this.GoodreadsService.getBooks().subscribe(data=>{this.libro=data});
-    //this.libro=this.GoodreadsService.getBooks1();
-   // this.libros=this.GoodreadsService.search("tangere");
-    //this.libro2=this.GoodreadsService.getBooks2();
 
-
-    //this.GoodreadsService.getBooks().subscribe(res=>{this.libro1=res},
-     // error => { // on failure
-     //   console.log('Error Occurred:');
-     // });
      this.GoodreadsService.getBooks3('anillos').subscribe(data=>{
        this.books1=data;
-       console.log(this.books1.items[1].volumeInfo);
-       console.log(32);
+
+
        this.books=this.books1.items;
-       console.log(this.books1);
-       console.log(this.books1.items[1].volumeInfo['title']);
+
      })
-    /*
-    this.GoodreadsService.getBooks().subscribe(data => {
 
-      this.books = data;
-      console.log(data);
-      console.log(this.books[0]);
-      console.log(3);
-      console.log(data[0].volumeInfo);
-    });
-    this.GoodreadsService.getBooks().subscribe((Response)=>{this.libro1=Response;
-    console.log(this.libro1);});
-    */
+     this.GoodreadsService.getBooksOpen().subscribe(data=>{
+       this.Docopen=data;
+this.Docopenbook=this.Docopen.docs;
+console.log(this.Docopenbook[0].title_suggest)
+       console.log(11323);
+       console.log(this.Docopen.docs[0].title_suggest);
+
+       console.log(323);
+     })
 
 
-    /*
-    this.GoodreadsService.getBooks().subscribe((data)=>{
-      console.log(data);
-      for(var i = 0;i<3;i++) {
-        console.log(data[i].etag)
-     }
-      console.log(data[0]);
+  }
 
-    });*/
+  getLibros(libro:string){
+this.GoodreadsService.getBooks3(libro).subscribe(data=>{
+  this.books2p=data;
+  this.booksp=this.books2p.items;
+
+
+})
+
   }
 
 }

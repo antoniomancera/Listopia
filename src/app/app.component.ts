@@ -16,7 +16,7 @@ export class AppComponent {
   books1:DateBooks;
  books:Book[];
 
-
+nombre:string;
 public libro2:Promise<any[]>;
 public libro1:Book[];
 
