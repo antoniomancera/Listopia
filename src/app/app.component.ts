@@ -19,7 +19,7 @@ export class AppComponent {
 
  nombre:string;
 
- @Output() open: EventEmitter<string> = new EventEmitter();
+ @Output() messageEmitter: EventEmitter<string> = new EventEmitter();
 
 
 public libro2:Promise<any[]>;
@@ -41,10 +41,11 @@ pruebaenvio="envio";
    }
 cambiaBusqueda(){
 this.router.navigateByUrl('/busquedaavanzada');
-this.open.emit(this.pruebaenvio);
+this.messageEmitter.emit("pruebaenvio");
+
 }
 enviarMensaje(mensaje:string){
-  this.open.emit(mensaje);
+
 }
 
 /*filter(){
