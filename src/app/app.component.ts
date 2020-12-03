@@ -29,19 +29,11 @@ pruebaenvio="envio";
   constructor(private GoodreadsService1:GoodreadsService,private router: Router) { }
 
   ngOnInit() {
-/*
-    this.GoodreadsService1.getBooks3('anillos').subscribe(data=>{
-      this.books1=data;
-      console.log(this.books1.items[1].volumeInfo);
-      console.log(32);
-      this.books=this.books1.items;
-      console.log(this.books1);
-      console.log(this.books1.items[1].volumeInfo['title']);
-    })*/
+
    }
-cambiaBusqueda(){
-this.router.navigateByUrl('/busquedaavanzada');
-this.messageEmitter.emit("pruebaenvio");
+enviaBusqueda(){
+//this.router.navigateByUrl('/busquedaavanzada');
+this.messageEmitter.emit(this.pruebaenvio);
 
 }
 enviarMensaje(mensaje:string){

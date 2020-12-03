@@ -10,13 +10,15 @@ import {APP_ROUTES} from './app.rutas';
 import { HttpClientModule } from "@angular/common/http";
 import { BusquedaavanzadaComponent } from './busquedaavanzada/busquedaavanzada.component';
 import { FormsModule } from '@angular/forms';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     BusquedaComponent,
-    BusquedaavanzadaComponent
+    BusquedaavanzadaComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

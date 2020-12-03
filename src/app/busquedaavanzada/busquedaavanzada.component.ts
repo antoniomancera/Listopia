@@ -11,7 +11,7 @@ import { Component, OnInit,Input } from '@angular/core';
 
 export class BusquedaavanzadaComponent implements OnInit {
 
-prueba:string;
+prueba:string="funciona";
 
 @Input() messageEmitter: string;
 
