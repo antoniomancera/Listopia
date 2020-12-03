@@ -31,13 +31,22 @@ libro:Book[];
     return this.http.get<DateBooks>('https://www.googleapis.com/books/v1/volumes?q=filibusterismo');
   }
 
-  public getBooks(): Observable<Book[]>{
-    return this.http.get<Book[]>('https://www.googleapis.com/books/v1/volumes?q=filibusterismo');
+  public getBooks(busqueda:string): Observable<DateBooks>{
+    return this.http.get<DateBooks>(`https://www.googleapis.com/books/v1/volumes?q=${busqueda}&maxResults=40`);
 
   }
-prueba:Book[];
+
+  public getBooksisbn(busqueda:number): Observable<DateBooks>{
+    return this.http.get<DateBooks>(`https://www.googleapis.com/books/v1/volumes?q= +isbn:${busqueda}`);
+
+  }
+  public getBooksauthor(busqueda:number): Observable<DateBooks>{
+    return this.http.get<DateBooks>(`https://www.googleapis.com/books/v1/volumes?q= +inauthor:${busqueda}`);
+
+  }
+
 public getBooks3(busqueda:string): Observable<DateBooks>{
-  return this.http.get<DateBooks>(`https://www.googleapis.com/books/v1/volumes?q=${busqueda}&maxResults=40`);
+  return this.http.get<DateBooks>(  `https://www.googleapis.com/books/v1/volumes?q=${busqueda}&maxResults=40`);
 
 }
 

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: "https://www.goodreads.com/"
+  baseUrl: "https://www.goodreads.com/",
+  GoogleUrl:"https://www.googleapis.com/books/v1/volumes?q="
 };
 
 /*
