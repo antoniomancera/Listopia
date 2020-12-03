@@ -20,7 +20,7 @@ import {OpenDataBooks} from '../interfaces/openlibrary/open-data-books';
 export class GoodreadsService {
 libros:DateBooks;
 libro:Book[];
-@Input () value: string;
+
 
   constructor(
     public http:HttpClient
@@ -37,7 +37,7 @@ libro:Book[];
   }
 prueba:Book[];
 public getBooks3(busqueda:string): Observable<DateBooks>{
-  return this.http.get<DateBooks>(`https://www.googleapis.com/books/v1/volumes?q=${busqueda}`);
+  return this.http.get<DateBooks>(`https://www.googleapis.com/books/v1/volumes?q=${busqueda}&maxResults=40`);
 
 }
 

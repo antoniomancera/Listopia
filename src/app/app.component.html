@@ -16,11 +16,11 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="nombre" name="prueba">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="nombre" name="prueba" (ngModelChange)=elementobuscar (keyup)="cambiaBusqueda()">
       <button class="btn btn-outline-success my-2 my-sm-0" id="prueba" type="submit"  [routerLink]="['/busquedaavanzada']"  [routerLinkActive]="['active']"  >Search</button>
     </form>
   </div>
 </nav><div class="container-fluid"> <router-outlet></router-outlet> </div>
-
-
-
+<div>prueba
+prueba1</div>
+<button (click)="enviarMensaje(pruebaenvio)">Send to Parent</button>
