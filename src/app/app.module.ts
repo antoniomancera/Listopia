@@ -11,6 +11,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { BusquedaavanzadaComponent } from './busquedaavanzada/busquedaavanzada.component';
 import { FormsModule } from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { PruebasComponent } from './pruebas/pruebas.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     AppComponent,
     BusquedaComponent,
     BusquedaavanzadaComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    PruebasComponent
   ],
   imports: [
     BrowserModule,
