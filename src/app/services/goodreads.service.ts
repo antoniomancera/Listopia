@@ -25,7 +25,7 @@ libro:Book[];
   constructor(
     public http:HttpClient
   ) { }
-
+key:string="AIzaSyB8g-064mS_49knthDIKQPx7ju_6W3AFHU";
 
   public getBook(): Observable<DateBooks>{
     return this.http.get<DateBooks>('https://www.googleapis.com/books/v1/volumes?q=filibusterismo');
@@ -40,8 +40,22 @@ libro:Book[];
     return this.http.get<DateBooks>(`https://www.googleapis.com/books/v1/volumes?q= +isbn:${busqueda}`);
 
   }
-  public getBooksauthor(busqueda:number): Observable<DateBooks>{
+  public getBooksauthor(busqueda:string): Observable<DateBooks>{
     return this.http.get<DateBooks>(`https://www.googleapis.com/books/v1/volumes?q= +inauthor:${busqueda}`);
+
+  }
+  public getBooksauthor1(busqueda:string): Observable<DateBooks>{
+    return this.http.get<DateBooks>(`https://www.googleapis.com/books/v1/volumes?q= +inauthor:tolkien&key=AIzaSyB8g-064mS_49knthDIKQPx7ju_6W3AFHU`);
+
+  }
+
+  public getBooksgenre(genre:string): Observable<DateBooks>{
+    return this.http.get<DateBooks>(`https://www.googleapis.com/books/v1/volumes?q=subject:${genre}`);
+
+  }
+
+  public getBooksPublisher(publisher:string): Observable<DateBooks>{
+    return this.http.get<DateBooks>(`https://www.googleapis.com/books/v1/volumes?q=inpublisher:${publisher}`);
 
   }
 

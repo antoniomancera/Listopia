@@ -15,6 +15,8 @@ export class BusquedaavanzadaComponent implements OnInit {
 prueba:any;
   isbn:number;
   author:string;
+  genero:string;
+  editorial:string
   books:Book[];
   dateBook:DateBooks;
   constructor(private GoodreadsService:GoodreadsService) { }
@@ -25,7 +27,28 @@ buscarporIsbn(isbn:number){
  this.GoodreadsService.getBooksisbn(isbn).subscribe(
    data=>{this.dateBook=data;
     this.books=this.dateBook.items;
-   })  
+   })
+}
+buscarporAutor(buscar:string){
+this.GoodreadsService.getBooksauthor(buscar).subscribe(
+  data=>{this.dateBook=data;
+  this.books=this.dateBook.items;}
+)
+}
+
+buscarporGenero(genero:string){
+  this.GoodreadsService.getBooksgenre(genero).subscribe(
+    data=>{this.dateBook=data;
+    this.books=this.dateBook.items;}
+  )
+}
+
+buscarporEditorial(editorial:string){
+
+  this.GoodreadsService.getBooksPublisher(editorial).subscribe(
+    data=>{this.dateBook=data;
+    this.books=this.dateBook.items;}
+  )
 }
 
 }

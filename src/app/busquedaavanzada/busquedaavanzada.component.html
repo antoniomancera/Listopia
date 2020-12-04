@@ -6,14 +6,22 @@
     minlength="4" maxlength="18" size="10" placeholder="introduzca texto"  [(ngModel)]="isbn" (keyup)="buscarporIsbn(isbn)">
 
 
-    <div>Busqueda por isbn<input type="text" id="busquedaisbn"  required
-      minlength="4" maxlength="18" size="10" placeholder="introduzca texto"  [(ngModel)]="author" (keyup)="buscarporIsbn(isbn)">
+    <div>Busqueda por autor<input type="text" id="busquedaautor"  required
+      minlength="4" maxlength="18" size="10" placeholder="introduzca texto"  [(ngModel)]="author" (keyup)="buscarporAutor(author)">
+
+      <div>Busqueda por género<input type="text" id="busquedagenero"  required
+        minlength="4" maxlength="18" size="10" placeholder="introduzca texto"  [(ngModel)]="genero" (keyup)="buscarporGenero(genero)">
+
+        <div>Busqueda por editorial<input type="text" id="busquedaeditorial"  required
+          minlength="4" maxlength="18" size="10" placeholder="introduzca texto"  [(ngModel)]="editorial" (keyup)="buscarporEditorial(editorial)">
+
 
 <div *ngFor="let book of books">
     <h4 class="prueba">
         <p> {{book.volumeInfo['title']}}</p>
-  <p><img src={{book.volumeInfo.imageLinks.thumbnail}}></p>
-  
+        <p><img src={{book.volumeInfo.imageLinks.thumbnail}}></p>
+        <!--{{book.volumeInfo.imageLinks['smallThumbnail']}}-->
+  <p> {{book.volumeInfo['authors']}}</p>
     </h4>
   </div>
 
