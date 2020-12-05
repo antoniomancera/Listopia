@@ -7,16 +7,24 @@
           {{film.poster_path}}
       </h4>
     </div>
-   
+
 
     <input type="text" id="namea" name="nameb" required
-    minlength="4" maxlength="8" size="10" placeholder="introduzca texto" [(ngModel)]="titul" (keyup)="getLibros(titul)" >
+    minlength="4" maxlength="8" size="10" placeholder="introduzca texto" [(ngModel)]="titul" (keyup)="getLibros(titul) " >
+
+
+<div *ngFor="let item of unodiez">
+
+  <p>
+    {{prubas[item]}}
+  </p>
+</div>
 
     <div *ngFor="let book of books">
       <h4 class="prueba">
           <p> {{book.volumeInfo['title']}}</p>
-    <p><img src={{book.volumeInfo.imageLinks.thumbnail}}></p>
-    
+    <!--<p><img src={{book.volumeInfo.imageLinks.thumbnail}}></p>-->
+
       </h4>
     </div>
 
