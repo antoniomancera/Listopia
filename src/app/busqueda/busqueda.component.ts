@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from '../interfaces/book';
-import {VolumeInfo} from '../interfaces/volume-info';
-import {DateBooks} from '../interfaces/date-books';
+
+import {DateBooks, Book} from '../interfaces/date-books';
 
 import { GoodreadsService} from '../services/goodreads.service';
 import {Observable} from 'rxjs';

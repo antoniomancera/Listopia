@@ -6,9 +6,8 @@ import { Injectable } from '@angular/core';
 import { Observable, pipe, throwError } from 'rxjs';
 
 import { catchError, map } from 'rxjs/operators'
-import { Book } from '../interfaces/book';
-import {VolumeInfo} from '../interfaces/volume-info';
-import {DateBooks} from '../interfaces/date-books';
+
+import {DateBooks,Book,VolumeInfo} from '../interfaces/date-books';
 import { stringify } from 'querystring';
 import {Docs} from '../interfaces/openlibrary/docs';
 import {OpenDataBooks} from '../interfaces/openlibrary/open-data-books';

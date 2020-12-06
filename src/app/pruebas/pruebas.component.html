@@ -13,12 +13,7 @@
     minlength="4" maxlength="8" size="10" placeholder="introduzca texto" [(ngModel)]="titul" (keyup)="getLibros(titul) " >
 
 
-<div *ngFor="let item of unodiez">
 
-  <p>
-    {{prubas[item]}}
-  </p>
-</div>
 
     <div *ngFor="let book of books">
       <h4 class="prueba">
@@ -26,6 +21,13 @@
     <!--<p><img src={{book.volumeInfo.imageLinks.thumbnail}}></p>-->
 
       </h4>
+
+     
     </div>
 
+
+    prueba1
+    <div *ngFor="let libo of titulolibros">
+      <p>{{libo}}</p>
+    </div>
     la prueba {{prueba}}

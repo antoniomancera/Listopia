@@ -1,8 +1,6 @@
 import { Component ,EventEmitter,Input,Output} from '@angular/core';
-import {DateBooks} from './interfaces/date-books'
-import {VolumeInfo} from './interfaces/volume-info'
-import {ImageLinks} from './interfaces/image-links'
-import {Book} from './interfaces/book'
+import {DateBooks,Book,VolumeInfo,ImageLinks} from './interfaces/date-books'
+
 import { GoodreadsService} from './services/goodreads.service';
 import { Router } from '@angular/router';
 
