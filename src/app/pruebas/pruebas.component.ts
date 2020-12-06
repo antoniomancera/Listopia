@@ -20,13 +20,19 @@ databooks:DateBooks;
 books:Book[];
 prueba:string;
 pruebab:Book;
-nombrepeliculas:string[]=[];
-titulolibros:VolumeInfo[]=[];
+titulpeliculasfilms:film[]
+titulopeliculas:string[]=[];
+Volumetitulolibros:VolumeInfo[]=[];
+titulolibros:string[]=[];
 pelicula:film[]=[];
 prubas:string[]=[];
 unodiez:number[]=[0,1,2,3,4,5,6,7,8,9];
 prubeadatafilm:Datafilms;
 
+libros:string[]=[];
+libros1:string[]=[];
+volume:VolumeInfo[]=[];
+volume1:VolumeInfo[]=[];
   constructor(private GoodreadsService:GoodreadsService) { }
 
   ngOnInit(): void {
@@ -44,27 +50,21 @@ getLibros(libro:string){
   this.GoodreadsService.getBooks3(libro).subscribe(data=>{
     this.databooks=data;
     this.books=this.databooks.items;
-    
-    for(var i = 0; i < this.books.length; ++i){
-this.books[i].volumeInfo.title;
+    //this.volume=this.books.map(({volumeI}))
+    this.Volumetitulolibros=this.books.map(({volumeInfo})=>volumeInfo);
+    this.titulolibros=this.Volumetitulolibros.map(({title})=>title);
+
+    for(let libro of this.titulolibros){
+      this.GoodreadsService.getFilms(libro).subscribe(data=>{
+        this.titulpeliculasfilms=data.results;
+      })
     }
 
-    console.log(34324);
-    console.log(this.books);
-    console.log(this.titulolibros[0]);
-    console.log(this.titulolibros[1]);
-    console.log(this.titulolibros[2]);
-    console.log(this.titulolibros[3]);
-    console.log(this.titulolibros[4]);
-    console.log(this.titulolibros[5]);
-    console.log(this.prubas[3]);
-    console.log(this.prubas[5]);
-    console.log(this.prubas[6]);
-    console.log(this.prubas[10]);
-    console.log(this.prubas[11]);
-    console.log(this.nombrepeliculas[10]);
-  console.log(4);
+
+
   })
+
+
 
     }
 }

@@ -7,6 +7,7 @@ export interface Datafilms {
 
 export interface film{
   adult:boolean,
+  backdrop_path:string,
   genre_id:number[],
   id:number,
   original_language: string,
@@ -14,7 +15,7 @@ export interface film{
   overview: string,
   popularity:number,
   poster_path:string,
-  release_date:Date,
+  release_date:string,
   title:string,
   video: boolean,
   vote_average: number,
