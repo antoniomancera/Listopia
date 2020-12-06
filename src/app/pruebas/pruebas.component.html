@@ -13,6 +13,9 @@
     minlength="4" maxlength="8" size="10" placeholder="introduzca texto" [(ngModel)]="titul" (keyup)="getLibros(titul) " >
 
 
+    <div *ngFor="let titulo of titulopeliculas">
+      <p>{{titulo}}</p>
+    </div>
 
     <div *ngFor="let libto of titulolibros">
       titulo
@@ -28,8 +31,8 @@ dsad
     <div *ngFor="let book of books">
       <h4 class="prueba">
           <p> {{book.volumeInfo['title']}}</p>
-    <!--<p><img src={{book.volumeInfo.imageLinks.thumbnail}}></p>-->
-
+    <p><img src={{book.volumeInfo.imageLinks.thumbnail}}></p>
+    <!--<p> {{book.volumeInfo.datospeliculas[0].title}}</p>-->
       </h4>
 
 
@@ -37,7 +40,5 @@ dsad
 
 
     prueba1
-    <div *ngFor="let libo of titulolibros">
-      <p>{{libo}}</p>
-    </div>
+
     la prueba {{prueba}}

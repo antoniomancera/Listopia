@@ -9,9 +9,11 @@ import {   RouterModule } from '@angular/router';
 import {APP_ROUTES} from './app.rutas';
 import { HttpClientModule } from "@angular/common/http";
 import { BusquedaavanzadaComponent } from './busquedaavanzada/busquedaavanzada.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { PruebasComponent } from './pruebas/pruebas.component';
+import { MessageService } from './services/message.service';
+
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { PruebasComponent } from './pruebas/pruebas.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     RouterModule,
     RouterModule.forRoot(APP_ROUTES)

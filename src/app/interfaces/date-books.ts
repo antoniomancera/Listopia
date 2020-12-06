@@ -1,6 +1,7 @@
 import { NumberSymbol } from '@angular/common';
 import { ExpandSubscriber } from 'rxjs/internal/operators/expand';
 import { Url } from 'url';
+import { Datafilms, film } from './datafilms';
 
 
 export interface DateBooks {
@@ -40,7 +41,8 @@ imageLinks:ImageLinks,
 language:string,
 previewLink:string,
 infoLink:string,
-canonicalVolumeLink:string
+canonicalVolumeLink:string,
+datospeliculas:film[]
 }
 
 export interface ImageLinks {
