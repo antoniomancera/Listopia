@@ -13,8 +13,6 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { PruebasComponent } from './pruebas/pruebas.component';
 
-import { ContactoComponent } from './contacto/contacto.component';
-import { ContactService} from './services/contact.service';
 
 
 @NgModule({
@@ -23,8 +21,7 @@ import { ContactService} from './services/contact.service';
     BusquedaComponent,
     BusquedaavanzadaComponent,
     WelcomeComponent,
-    PruebasComponent,
-    ContactoComponent
+    PruebasComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +32,7 @@ import { ContactService} from './services/contact.service';
     RouterModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
-  providers: [ContactService],
+  providers: [],
   bootstrap: [AppComponent]
 }
 )

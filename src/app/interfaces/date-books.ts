@@ -42,7 +42,7 @@ language:string,
 previewLink:string,
 infoLink:string,
 canonicalVolumeLink:string,
-datospeliculas:film[]
+datospeliculas:Datafilms
 }
 
 export interface ImageLinks {

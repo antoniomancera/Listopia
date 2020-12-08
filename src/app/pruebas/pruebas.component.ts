@@ -50,7 +50,7 @@ getLibros(libro:string){
   this.GoodreadsService.getBooks3(libro).subscribe(data=>{
     this.databooks=data;
     this.books=this.databooks.items;
-
+   
 
     //this.volume=this.books.map(({volumeI}))
     this.Volumetitulolibros=this.books.map(({volumeInfo})=>volumeInfo);
