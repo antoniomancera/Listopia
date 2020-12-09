@@ -13,36 +13,35 @@
     minlength="4" maxlength="8" size="10" placeholder="introduzca texto" [(ngModel)]="titul" (keyup)="getLibros(titul) " >
 
 
+
+
     <div *ngFor="let titulo of titulopeliculas">
       <p>{{titulo}}</p>
     </div>
 
-    <div *ngFor="let libto of titulolibros">
-      titulo
-        <p>{{libto}}</p>
-      </div>
 
-      <div *ngFor="let libto of unodiez">
-        tituloasdas
-          <p>{{titulolibros[libto]}}</p>
-        </div>
+    <div *ngFor="let titulo of datafilmlibro">
+      prueba
+      <p>{{titulo.results[0].title}}</p>
+    </div>
 
-<div *ngFor="let libto of Volumetitulolibros">
-dsad
-  <p>{{libto.title}}</p>
-</div>
 
     <div *ngFor="let book of books">
       <h4 class="prueba">
           <p> {{book.volumeInfo['title']}}</p>
     <p><img src={{book.volumeInfo.imageLinks.thumbnail}}></p>
+
     <!--<p> {{book.volumeInfo.datospeliculas[0].title}}</p>-->
       </h4>
 
 
     </div>
 
+<div *ngFor="let book of databooks.items">
+<p>{{book.volumeInfo.title}}</p>
 
-    prueba1
+</div>
+
+
 
     la prueba {{prueba}}

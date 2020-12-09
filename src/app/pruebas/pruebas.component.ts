@@ -27,7 +27,10 @@ titulolibros:string[]=[];
 pelicula:film[]=[];
 prubas:string[]=[];
 unodiez:number[]=[0,1,2,3,4,5,6,7,8,9];
-prubeadatafilm:Datafilms;
+prubeadatafilm:Datafilms[]=[];
+pruebadata:Datafilms;
+
+datafilmlibro:Datafilms[]=[];
 
 libros:string[]=[];
 libros1:string[]=[];
@@ -50,18 +53,27 @@ getLibros(libro:string){
   this.GoodreadsService.getBooks3(libro).subscribe(data=>{
     this.databooks=data;
     this.books=this.databooks.items;
-   
+    for(let book of this.databooks.items){
+      this.GoodreadsService.getFilms(book.volumeInfo.title).subscribe(data=>{
+        book.volumeInfo.datospeliculas=data;
+      })
+    };
+
+
+
+
+
+this.GoodreadsService.getFilms("harry").subscribe(data=>
+    {
+      this.prubeadatafilm.push(data);
+    })
+
 
     //this.volume=this.books.map(({volumeI}))
     this.Volumetitulolibros=this.books.map(({volumeInfo})=>volumeInfo);
     this.titulolibros=this.Volumetitulolibros.map(({title})=>title);
 
 
-    /*for(let i=0;i<this.books.length;i++){
-      this.GoodreadsService.getFilms(this.books[i].volumeInfo.title).subscribe(data=>{
-        this.books[i].volumeInfo.datospeliculas=data.results;
-      })
-    }*/
 
 
     for(let libro of this.titulolibros){
@@ -83,6 +95,14 @@ getLibros(libro:string){
 
   })
 
+  for(let libro of this.titulolibros){
+    this.GoodreadsService.getFilms(libro).subscribe(data=>{
+      this.pruebadata=data;
+      this.prubeadatafilm.push(data);
+    })
+  }
+
+
 /*
   for(let book of this.books){
     this.GoodreadsService.getFilms(book.volumeInfo.title).subscribe(data=>{
@@ -90,6 +110,8 @@ getLibros(libro:string){
     })
   }*/
 console.log(200);
+console.log(this.titulopeliculas[0]);
+console.log(this.prubeadatafilm[0].results[0].title);
 //console.log(this.books[0].volumeInfo.datospeliculas[0].title);
 
 console.log(2000);
