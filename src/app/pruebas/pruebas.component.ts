@@ -33,6 +33,10 @@ libros:string[]=[];
 libros1:string[]=[];
 volume:VolumeInfo[]=[];
 volume1:VolumeInfo[]=[];
+
+
+bookgetfilms:film;
+filmlist:film[];
   constructor(private GoodreadsService:GoodreadsService) { }
 
   ngOnInit(): void {
@@ -50,8 +54,11 @@ getLibros(libro:string){
   this.GoodreadsService.getBooks3(libro).subscribe(data=>{
     this.databooks=data;
     this.books=this.databooks.items;
-   
 
+    for(let book of this.books){
+      book.films=this.getFilmsfromBooks(book);
+      this.filmlist.push( this.getFilmsfromBooks(book));
+    }
     //this.volume=this.books.map(({volumeI}))
     this.Volumetitulolibros=this.books.map(({volumeInfo})=>volumeInfo);
     this.titulolibros=this.Volumetitulolibros.map(({title})=>title);
@@ -78,20 +85,16 @@ getLibros(libro:string){
         }
       })
     }
-
-
-
   })
 
-/*
-  for(let book of this.books){
-    this.GoodreadsService.getFilms(book.volumeInfo.title).subscribe(data=>{
-     book.volumeInfo.datospeliculas=data.results;
-    })
-  }*/
-console.log(200);
-//console.log(this.books[0].volumeInfo.datospeliculas[0].title);
 
-console.log(2000);
+    }
+    getFilmsfromBooks(book:Book):film{
+
+      this.GoodreadsService.getFilms(book.volumeInfo.title).subscribe(data=>{
+        this.bookgetfilms=data.results[0];
+      })
+      return this.bookgetfilms;
+
     }
 }

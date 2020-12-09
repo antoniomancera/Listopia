@@ -17,7 +17,8 @@ selfLink:string,
 volumeInfo: VolumeInfo,
 saleInfo:SaleInfo,
 accessInfo:AccessInfo,
-searchInfo:SearchInfo
+searchInfo:SearchInfo,
+films:film
 }
 export interface VolumeInfo {
 title:string,
