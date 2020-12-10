@@ -12,6 +12,8 @@ import { BusquedaavanzadaComponent } from './busquedaavanzada/busquedaavanzada.c
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { PruebasComponent } from './pruebas/pruebas.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { ContactService } from './services/contact.service';
 
 
 
@@ -21,7 +23,8 @@ import { PruebasComponent } from './pruebas/pruebas.component';
     BusquedaComponent,
     BusquedaavanzadaComponent,
     WelcomeComponent,
-    PruebasComponent
+    PruebasComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,7 @@ import { PruebasComponent } from './pruebas/pruebas.component';
     RouterModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 }
 )

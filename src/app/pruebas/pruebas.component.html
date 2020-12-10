@@ -26,7 +26,13 @@
       <h4 class="prueba">
         <p *ngIf="book.films!==undefined && book.films.total_pages>0">{{book.films.results[0].title}}</p>
         <p *ngIf="book.films!==undefined && book.films.total_pages>0">{{book.films.results[0].poster_path}}</p>
-       <!-- <p *ngIf="book.films!==undefined"><img src="https://image.tmdb.org/t/p/w1280/{{book.films.results[0].poster_path}}"></p>-->
+        <p *ngIf="book.films!==undefined && book.films.total_pages>0">{{book.films.results[0].poster_path}}</p>
+        <p *ngIf="book.films.total_pages>0"><img src="https://image.tmdb.org/t/p/w1280/{{book.films.results[0].poster_path}}" width="30" height="30"></p>
+
+
+
+
+        <!-- <p *ngIf="book.films!==undefined"><img src="https://image.tmdb.org/t/p/w1280/{{book.films.results[0].poster_path}}"></p>-->
         <!--<p>{{book.volumeInfo.datospeliculas.results.length}}</p>-->
 
         <p> {{book.volumeInfo['title']}}</p>

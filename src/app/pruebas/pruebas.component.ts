@@ -61,7 +61,10 @@ getLibros(libro:string){
         console.log('resultados de getfilms',data);
         book.films=data;
         console.log(book.volumeInfo.title,book.films);
-      })
+      },
+      error=>console.log(error),
+      ()=>console.log("peliculas posiblemente relacionadas con",book)
+      )
       console.log('prueba',this.books[0]);
       //book.films=this.getFilmsfromBooks(book);
 
