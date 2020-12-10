@@ -14,8 +14,13 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { PruebasComponent } from './pruebas/pruebas.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { ContactService } from './services/contact.service';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatIconModule} from '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatTabsModule} from '@angular/material/tabs'
 
 @NgModule({
   declarations: [
@@ -25,6 +30,7 @@ import { ContactService } from './services/contact.service';
     WelcomeComponent,
     PruebasComponent,
     ContactoComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,14 @@ import { ContactService } from './services/contact.service';
     ReactiveFormsModule,
     AppRoutingModule,
     RouterModule,
-    RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(APP_ROUTES),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatToolbarModule,
+    MatTabsModule
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]
