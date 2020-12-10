@@ -18,7 +18,7 @@ volumeInfo: VolumeInfo,
 saleInfo:SaleInfo,
 accessInfo:AccessInfo,
 searchInfo:SearchInfo,
-films:film
+films:Datafilms
 }
 export interface VolumeInfo {
 title:string,
@@ -42,8 +42,7 @@ imageLinks:ImageLinks,
 language:string,
 previewLink:string,
 infoLink:string,
-canonicalVolumeLink:string,
-datospeliculas:Datafilms
+canonicalVolumeLink:string
 }
 
 export interface ImageLinks {

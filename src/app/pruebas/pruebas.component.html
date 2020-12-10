@@ -17,25 +17,22 @@
       <p>{{titulo}}</p>
     </div>
 
-    <div *ngFor="let libto of titulolibros">
-      titulo
-        <p>{{libto}}</p>
-      </div>
 
-      <div *ngFor="let libto of unodiez">
-        tituloasdas
-          <p>{{titulolibros[libto]}}</p>
-        </div>
 
-<div *ngFor="let libto of Volumetitulolibros">
-dsad
-  <p>{{libto.title}}</p>
-</div>
+
+
 
     <div *ngFor="let book of books">
       <h4 class="prueba">
-          <p> {{book.volumeInfo['title']}}</p>
-    <p><img src={{book.volumeInfo.imageLinks.thumbnail}}></p>
+        <p *ngIf="book.films!==undefined && book.films.total_pages>0">{{book.films.results[0].title}}</p>
+        <p *ngIf="book.films!==undefined && book.films.total_pages>0">{{book.films.results[0].poster_path}}</p>
+       <!-- <p *ngIf="book.films!==undefined"><img src="https://image.tmdb.org/t/p/w1280/{{book.films.results[0].poster_path}}"></p>-->
+        <!--<p>{{book.volumeInfo.datospeliculas.results.length}}</p>-->
+
+        <p> {{book.volumeInfo['title']}}</p>
+          <!--<p *ngIf="book.volumeInfo.datospeliculas.results.length>0">{{book.volumeInfo.datospeliculas.results[0].title}}</p>-->
+         <!-- <p>{{book.volumeInfo.datospeliculas.results[0].title}}</p>-->
+   <!-- <p><img src={{book.volumeInfo.imageLinks.thumbnail}}></p>-->
     <!--<p> {{book.volumeInfo.datospeliculas[0].title}}</p>-->
       </h4>
 
@@ -43,6 +40,4 @@ dsad
     </div>
 
 
-    prueba1
 
-    la prueba {{prueba}}
