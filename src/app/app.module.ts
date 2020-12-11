@@ -15,6 +15,7 @@ import { PruebasComponent } from './pruebas/pruebas.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { ContactService } from './services/contact.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from '@angular/material/icon';
@@ -44,15 +45,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     RouterModule,
     RouterModule.forRoot(APP_ROUTES),
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatIconModule,
-    MatProgressSpinnerModule,
-    MatToolbarModule,
-    MatTabsModule,
-    MatPaginatorModule,
-    MatCardModule,
-    MatGridListModule
+    MaterialModule
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]
