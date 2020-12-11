@@ -1,36 +1,28 @@
+<mat-card>
+  <input type="text" id="namea" name="nameb" required
+  minlength="4"  size="10" placeholder="introduzca texto" [(ngModel)]="titulo" (keyup)="getSearchBooks(titulo)" >
+
+</mat-card>
+
+<div *ngFor="let book of books">
+  <mat-card>
+    <mat-grid-list cols="2" [style.background]="'skyblue'" rowHeight="5:1" >
+      <mat-grid-tile>{{book.volumeInfo.title}} </mat-grid-tile>
+      <mat-grid-tile> <p *ngIf="book.films!==undefined && book.films.total_pages>0">{{book.films.results[0].title}}</p>
+        <p *ngIf="book.films!==undefined && book.films.total_pages>0">{{book.films.results[0].poster_path}}</p>
+
+        <p *ngIf="book.films!==undefined && book.films.total_pages>0"><img src="https://image.tmdb.org/t/p/w1280/{{book.films.results[0].poster_path}}" width="30" height="30"></p>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </mat-card>
+</div>
 
 
-<table>
-  <thead>
-  </thead>
-  <tbody>
- <div><input type="text" id="name" name="nameb" required
-    minlength="4" maxlength="8" size="10" placeholder="introduzca texto"  (ngModelChange)="tit" ></div>
-    <input type="text" id="namea" name="nameb" required
-    minlength="4" maxlength="8" size="10" placeholder="introduzca texto" [(ngModel)]="titulo" (keyup)="getLibros(titulo)" >
-<p>{{titulo}}</p>
-
-
-<!--
-<div *ngFor="let book of Docopenbook">
-  <h4 class="prueba">
-      <p> {{book.title_suggest}}</p>
-
-
-      <p><img src='https://covers.openlibrary.org/b/id/{{book.cover_i}}-M.jpg'></p>
-
-  </h4>
-</div>-->
-
-
-
-
-
-
-<div *ngFor="let book of booksp">
+<div *ngFor="let book of books" >
   <h4 class="prueba">
       <p> {{book.volumeInfo['title']}}</p>
-<p><img src={{book.volumeInfo.imageLinks.thumbnail}}></p>
+<p *ngIf="book.volumeInfo.imageLinks!==undefined"><img src={{book.volumeInfo.imageLinks.thumbnail}}></p>
 
   </h4>
 </div>

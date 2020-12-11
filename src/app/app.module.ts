@@ -20,7 +20,10 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatTabsModule} from '@angular/material/tabs'
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,7 @@ import {MatTabsModule} from '@angular/material/tabs'
     WelcomeComponent,
     PruebasComponent,
     ContactoComponent
-    
+
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,10 @@ import {MatTabsModule} from '@angular/material/tabs'
     MatIconModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatPaginatorModule,
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]

@@ -56,7 +56,7 @@ getLibros(libro:string){
     this.books=this.databooks.items;
 
     for(let book of this.books){
-      //console.log(book);
+
       this.GoodreadsService.getFilms(book.volumeInfo.title).subscribe(data=>{
         console.log('resultados de getfilms',data);
         book.films=data;
@@ -66,36 +66,12 @@ getLibros(libro:string){
       ()=>console.log("peliculas posiblemente relacionadas con",book)
       )
       console.log('prueba',this.books[0]);
-      //book.films=this.getFilmsfromBooks(book);
 
-     // this.filmlist.push( this.getFilmsfromBooks(book));
     }
-    //this.volume=this.books.map(({volumeI}))
-    this.Volumetitulolibros=this.books.map(({volumeInfo})=>volumeInfo);
-    this.titulolibros=this.Volumetitulolibros.map(({title})=>title);
 
 
-    /*for(let i=0;i<this.books.length;i++){
-      this.GoodreadsService.getFilms(this.books[i].volumeInfo.title).subscribe(data=>{
-        this.books[i].volumeInfo.datospeliculas=data.results;
-      })
-    }*/
 
 
-    /*for(let libro of this.titulolibros){
-      this.GoodreadsService.getFilms(libro).subscribe(data=>{
-        this.titulpeliculasfilms=data.results;
-        //this.titulopeliculas=[];
-        for(let peliculafilm of this.titulpeliculasfilms){
-          if(data.results.length>0){
-          this.titulopeliculas.push(peliculafilm.title);
-          }
-          else{
-            this.titulopeliculas.push("no s eha encontrado pelicula");
-          }
-        }
-      })
-    }*/
 
 
   })
@@ -103,13 +79,6 @@ getLibros(libro:string){
 
     }
 
-    /*
-    getFilmsfromBooks(book:Book):film{
 
-      this.GoodreadsService.getFilms(book.volumeInfo.title).subscribe(data=>{
-        this.bookgetfilms=data.results[0];
-      })
-      return this.bookgetfilms;
 
-    }*/
 }
