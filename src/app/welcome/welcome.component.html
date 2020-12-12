@@ -1,25 +1,3 @@
-<div fxlayout=”column”>
-  <div flex=”30”>asdsadsad</div>
-  <div flex>sadsadas</div>
-  </div>
-
-
-  <div class="box">
-    <div>One</div>
-    <div>Two</div>
-    <div>Three
-        <br>has
-        <br>extra
-        <br>text
-    </div>
-  </div>
-  <div class="flex-container" fxlayout=”column”>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-  </div>
-
-
 
   <div class="contenedor">
     <div class="fila0">Lorem fistrum ese que llega diodenoo incididunt magna quis va usté muy cargadoo velit llevame al sircoo labore. Ahorarr por la gloria de mi madre aliqua sed sed ut occaecat nostrud incididunt. Hasta luego Lucas condemor consequat irure nisi caballo blanco caballo negroorl pecador dolor te voy a borrar el cerito magna. Ad irure ahorarr no puedor la caidita. Esse sed aliquip officia ese hombree fistro no puedor elit. Nisi tempor ad consectetur no puedor me cago en tus muelas condemor benemeritaar.
@@ -33,17 +11,22 @@
         <input type="text" matInput [(ngModel)]="titulo" (keyup)="getSearchBooks(titulo)" >
 
       </mat-card>
-<!--
-      <div *ngFor="let book of books">
-        <h4 class="prueba">
-          <p *ngIf="book.films!==undefined && book.films.total_pages>0">{{book.films.results[0].title}}</p>
-          <p *ngIf="book.films!==undefined && book.films.total_pages>0">{{book.films.results[0].poster_path}}</p>
-          <p *ngIf="book.films!==undefined && book.films.total_pages>0">{{book.films.results[0].poster_path}}</p>
-          <p *ngIf="book.films.total_pages>0"><img src="https://image.tmdb.org/t/p/w1280/{{book.films.results[0].poster_path}}" width="30" height="30"></p>
-        </h4>
-      </div>-->
-{{titulo}}
 
+<mat-card *ngFor="let book of books" layout="column" class = "tp-card">
+  <mat-card-title>{{book.volumeInfo.title}}</mat-card-title>
+  <mat-card-content fxFlex="80" *ngIf="book.volumeInfo.imageLinks!==undefined">
+    <img src={{book.volumeInfo.imageLinks.thumbnail}}>
+  </mat-card-content>
+  <mat-card-content fxFlex="20" >
+    <p >asdasd</p>
+  </mat-card-content>
+</mat-card>
+<mat-card *ngFor="let book of books" >
+<mat-card-content *ngIf="book.films!==undefined && book.films.total_pages>0" >
+  {{book.films.results[0].title}}
+</mat-card-content>
+  
+</mat-card>
     </div>
   </div>
 
