@@ -12,6 +12,7 @@ import { GoodreadsService} from '../services/goodreads.service';
   styleUrls: ['./pruebas.component.css']
 })
 export class PruebasComponent implements OnInit {
+  currentRate = 8;
 datafilms:Datafilms;
 films:film[];
 titulo:string;

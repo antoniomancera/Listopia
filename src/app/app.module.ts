@@ -26,6 +26,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { StarRatingModule } from 'angular-star-rating';
+import { RatingModule } from 'ng-starrating';
+import { BusquedapeliculasComponent } from './busquedapeliculas/busquedapeliculas.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +37,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BusquedaavanzadaComponent,
     WelcomeComponent,
     PruebasComponent,
-    ContactoComponent
+    ContactoComponent,
+    BusquedapeliculasComponent
 
   ],
   imports: [
@@ -46,7 +51,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     RouterModule.forRoot(APP_ROUTES),
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    StarRatingModule,
+    RatingModule
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]

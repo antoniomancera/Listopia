@@ -2,7 +2,7 @@
     display:flex;
     flex-direction: row;
     border-color: seagreen;
-    
+    text-align: -webkit -center;
   }
 
 .mat-card{
@@ -16,13 +16,18 @@
 .mat-form-field{
    margin-right: 2em; 
    text-align: center;
+   margin-left: auto;
+  margin-right: auto;
 }
 
 .busqueda{
    margin: 0 auto;
    text-align: center;
+   margin-left: auto;
+  margin-right: auto;
 }
 .div{
     border-color: seagreen;
     background-color: seagreen;
+    text-align: -webkit -center;
 }

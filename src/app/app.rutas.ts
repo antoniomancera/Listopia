@@ -4,6 +4,8 @@ import { Route } from '@angular/router';
  import {PruebasComponent  } from  './pruebas/pruebas.component';
  import { WelcomeComponent } from './welcome/welcome.component';
  import { ContactoComponent } from './contacto/contacto.component';
+ import { BusquedapeliculasComponent } from './busquedapeliculas/busquedapeliculas.component';
+
 
    export const APP_ROUTES: Route[] =
    [
@@ -12,6 +14,7 @@ import { Route } from '@angular/router';
      { path: 'contacto', component:ContactoComponent},
      { path: 'busquedaavanzada', component:BusquedaavanzadaComponent },
      {path:'pruebas',component:PruebasComponent},
+     {path:'peliculas',component:BusquedapeliculasComponent },
      { path: '', redirectTo: '/welcome', pathMatch: 'full' },
      // Ruta que no coincide con ninguna de las anteriores
      { path: '**', redirectTo: '/welcome', pathMatch: 'full' }

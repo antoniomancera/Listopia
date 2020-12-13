@@ -10,6 +10,8 @@ import { ContactService } from '../services/contact.service';
 export class ContactoComponent implements OnInit {
 
   FormData: FormGroup;
+  patternEmail: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+ 
   constructor(private builder: FormBuilder, private contact:ContactService) { }
 
 
@@ -17,7 +19,7 @@ export class ContactoComponent implements OnInit {
   ngOnInit(): void {
     this.FormData = this.builder.group({
       Fullname: new FormControl('', [Validators.required]),
-      Email: new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
+      Email: new FormControl('', [Validators.required, Validators.pattern(this.patternEmail)]),
       Comment: new FormControl('', [Validators.required])})
   }
   onSubmit(FormData) {

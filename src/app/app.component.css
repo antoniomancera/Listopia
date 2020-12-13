@@ -4,7 +4,11 @@
     background-color: rgb(62, 141, 146);
     color: rgb(201, 170, 71);
 }
-
+.mat-nav-list{
+    justify-content: space-between;
+    background-color: rgb(62, 141, 146);
+    color: rgb(201, 170, 71);
+}
  span{
     padding-right: 1rem;
 }
