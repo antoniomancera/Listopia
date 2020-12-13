@@ -1,0 +1,36 @@
+.contenedor {
+  display:flex;
+  flex-direction: row;
+  border-color: seagreen;
+  text-align: -webkit -center;
+}
+
+.mat-card{
+  width: 100%;
+  margin-top: 1em;
+
+  background-color: rgb(223, 152, 152);
+  border-color: seagreen;
+}
+
+.mat-form-field{
+ margin-right: 2em;
+ text-align: center;
+ margin-left: auto;
+margin-right: auto;
+}
+
+.busqueda{
+ margin: 0 auto;
+ text-align: center;
+ margin-left: auto;
+margin-right: auto;
+}
+.div{
+
+  background-color: rgb(218, 196, 196);
+  text-align: -webkit -center;
+}
+.image{
+  margin-right: 1em;
+}

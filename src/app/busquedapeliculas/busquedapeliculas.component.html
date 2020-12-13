@@ -6,7 +6,7 @@
             Introduzca título
         </mat-label>
         <input matInput  [(ngModel)]="titulo" (keyup)="getPeliculas(titulo)">
-    </mat-form-field>  
+    </mat-form-field>
 </div>
 
 
@@ -17,20 +17,21 @@
         <mat-card-title>{{film.original_title}}</mat-card-title>
       </mat-card-header>
       <mat-card-content >
-        <div fxLayout="row">            
+        <div fxLayout="row">
           <div class="image"  fxFlex="130px" >
-           <p><img src="https://image.tmdb.org/t/p/w1280/{{film.poster_path}}" style="width: 55vw; min-width: 330px;"></p>
+           <p><img src="https://image.tmdb.org/t/p/w1280/{{film.poster_path}}" width="130px" ></p>
             <p >
-                {{film.vote_average}}</p>              
+                {{film.vote_average}}</p>
           </div>
           <div  fxFlex="100%"  >
-            <!--<p><strong>Autor:</strong>{{book.volumeInfo.authors[0]}}</p>             
-            <p><strong>Sinopsis:</strong>{{book.volumeInfo.description}}</p>-->                              
+            <p><strong>Sinopsis: </strong>{{film.overview}}</p>
+            <!--<p><strong>Autor:</strong>{{book.volumeInfo.authors[0]}}</p>
+            <p><strong>Sinopsis:</strong>{{book.volumeInfo.description}}</p>-->
           </div>
         </div>
-    
-        
+
+
       </mat-card-content>
-      
+
     </mat-card>
   </div>

@@ -30,6 +30,7 @@ import { StarRatingModule } from 'angular-star-rating';
 import { RatingModule } from 'ng-starrating';
 import { BusquedapeliculasComponent } from './busquedapeliculas/busquedapeliculas.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

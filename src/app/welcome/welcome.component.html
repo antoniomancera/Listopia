@@ -1,6 +1,16 @@
+<div *ngIf="books.length>0">
+  prueba
+</div>
+
 
 <div class="contenedor">
   <div class="fila0">
+    <button mat-mini-fab>mat-mini-fab</button>
+<a mat-mini-fab routerLink="https://www.arungudelli.com">
+mat-mini-fab</a>
+    <mat-radio-button>asa</mat-radio-button>
+    <button mat-mini-fab>mat-mini-fab</button>
+    <button mdbBtn type="button" color="primary" rounded="true" mdbWavesEffect>Primary</button>
     Lorem fistrum ese que llega diodenoo incididunt magna quis va usté muy cargadoo velit llevame al sircoo labore. Ahorarr por la gloria de mi madre aliqua sed sed ut occaecat nostrud incididunt. Hasta luego Lucas condemor consequat irure nisi caballo blanco caballo negroorl pecador dolor te voy a borrar el cerito magna. Ad irure ahorarr no puedor la caidita. Esse sed aliquip officia ese hombree fistro no puedor elit. Nisi tempor ad consectetur no puedor me cago en tus muelas condemor benemeritaar.
 
       Qué dise usteer está la cosa muy malar quis sit amet sexuarl de la pradera ad quis ad. Me cago en tus muelas ex fistro occaecat está la cosa muy malar fistro. Amatomaa nisi a gramenawer veniam qui al ataquerl. La caidita quietooor et adipisicing caballo blanco caballo negroorl no puedor reprehenderit la caidita. Minim commodo a peich tempor aliquip mamaar. Ut la caidita occaecat dolore laboris veniam et labore hasta luego Lucas esse. Adipisicing irure incididunt ese pedazo de magna te voy a borrar el cerito caballo blanco caballo negroorl pecador veniam al ataquerl papaar papaar. Occaecat aliquip irure fistro te va a hasé pupitaa sit amet.
@@ -8,23 +18,29 @@
       Irure eiusmod esse mamaar voluptate papaar papaar ahorarr labore labore quis. Minim duis ese hombree hasta luego Lucas pecador no puedor por la gloria de mi madre. Está la cosa muy malar officia ese hombree ese hombree. Aute quietooor de la pradera consectetur. Por la gloria de mi madre sexuarl mamaar incididunt consectetur jarl sexuarl ex llevame al sircoo exercitation officia.
   </div>
   <div class="fila1">
-    
-    <div class="example-container">
+
+
+
+hgf
+  </div>
+</div>
+
+<!--<div class="example-container">
       <mat-form-field appearance="fill">
         <mat-label>Input</mat-label>
         <input matInput [(ngModel)]="titulo" (keyup)="getSearchBooks(titulo)" >
-      </mat-form-field>     
+      </mat-form-field>
     </div>
-    
+
     <mat-card>
       <input type="text" matInput [(ngModel)]="titulo" (keyup)="getSearchBooks(titulo)" >
     </mat-card>
 
-  
- 
 
-    
-    
+
+
+
+
 
     <div class="contenedor" *ngFor="let book of books" >
       <mat-card >
@@ -32,20 +48,20 @@
           <mat-card-title>{{book.volumeInfo.title}}</mat-card-title>
         </mat-card-header>
         <mat-card-content >
-          <div fxLayout="row">            
+          <div fxLayout="row">
             <div  fxFlex="100%" *ngIf="book.volumeInfo.imageLinks!==undefined">
               <img src={{book.volumeInfo.imageLinks.thumbnail}}>
-              <p></p>              
+              <p></p>
             </div>
             <div  fxFlex="100%" *ngIf="book.volumeInfo.authors!==undefined" >
-              <p>Author:{{book.volumeInfo.authors[0]}}</p>             
-              <!--<p>{{book.volumeInfo.description}}</p>   -->                             
+              <p>Author:{{book.volumeInfo.authors[0]}}</p>
+              <p>{{book.volumeInfo.description}}</p>
             </div>
           </div>
-      
-          
+
+
         </mat-card-content>
-        
+
       </mat-card>
 
       <mat-card *ngIf="book.films!==undefined && book.films.total_pages>0">
@@ -53,24 +69,17 @@
           <mat-card-title>{{book.films.results[0].title}}</mat-card-title>
         </mat-card-header>
           <mat-card-content>
-            <div fxLayout="row">            
+            <div fxLayout="row">
               <div  fxFlex="100%" >
                 <img src="https://image.tmdb.org/t/p/w1280/{{film.poster_path}}" >
-                <p></p>              
+                <p></p>
               </div>
               <div  fxFlex="100%"  >
-                <p>Author:{{book.volumeInfo.authors[0]}}</p>             
-                <!--<p>{{book.volumeInfo.description}}</p>   -->                             
+                <p>Author:{{book.volumeInfo.authors[0]}}</p>
+               <p>{{book.volumeInfo.description}}</p>
               </div>
             </div>
           </mat-card-content>
-       
+
       </mat-card>
-    </div>
-
-   
-
-    
-  </div>
-</div>
-
+    </div>-->
