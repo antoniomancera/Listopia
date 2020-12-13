@@ -16,20 +16,28 @@ titulo:string;
 databooks:DateBooks;
 
 rings:string="rings";
-prueba:string=this.rings.substring(0,2);
-  constructor(private GoodreadsService:GoodreadsService) { }
+prueba:string="s";
 
-  ngOnInit() {}
+romance:string="romance";
+fantasy:string="fantasy";
+historical:string="historical";
+mystery:string="mistery";
+thriller:string="Thriller";
+science:string="science";
+sciFi:string="Science-fiction";
+sport:string="sport";
+travel:string="travel"
+pets:string="animal";
+constructor(private GoodreadsService:GoodreadsService) { }
 
-  getSearchBooks(search:string){
+ngOnInit() {}
+
+getSearchBooks(search:string){
     this.GoodreadsService.getBooks(search).subscribe(data=>{
-      this.books=data.items;
-     
+      this.books=data.items;     
       for(let book of this.books){
-        this.GoodreadsService.getFilms(book.volumeInfo.title).subscribe(data=>{
-         
-          book.films=data;
-        
+        this.GoodreadsService.getFilms(book.volumeInfo.title).subscribe(data=>{         
+          book.films=data;        
         },
         error=>console.log(error),
         ()=>console.log("peliculas posiblemente relacionadas con",book.volumeInfo.title,book)
@@ -41,36 +49,20 @@ prueba:string=this.rings.substring(0,2);
       ()=>console.log(this.books))
   }
 
-  getFilmsrelatedBook(search:string):Datafilms{
-    this.GoodreadsService.getFilms(search).subscribe(data=>{
-      this.datafilm=data;
-    })
-    
-    return this.datafilm;
-    
-  }
-  getLibros(libro:string){
-    this.GoodreadsService.getBooks3(libro).subscribe(data=>{
-      this.databooks=data;
-      this.books=this.databooks.items;
+getFilmsrelatedBook(search:string):Datafilms{
+  this.GoodreadsService.getFilms(search).subscribe(data=>{
+    this.datafilm=data;
+  })
   
-      for(let book of this.books){
+  return this.datafilm;
   
-        this.GoodreadsService.getFilms(book.volumeInfo.title).subscribe(data=>{
-          console.log('resultados de getfilms',data);
-          book.films=data;
-          console.log(book.volumeInfo.title,book.films);
-        },
-        error=>console.log(error),
-        ()=>console.log("peliculas posiblemente relacionadas con",book)
-        )
-        console.log('prueba',this.books[0]);
-  
-      }  
-    })
-  
-  
-      }
+}
+
+buscarporGenero(genero:string){
+  this.GoodreadsService.getBooksgenre(genero).subscribe(data=>{
+    this.books=data.items;
+    }) 
+}
   
 
 }

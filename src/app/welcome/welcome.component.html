@@ -1,16 +1,26 @@
 <div *ngIf="books.length>0">
-  prueba
+  pruebagdf fgdfg
 </div>
 
 
 <div class="contenedor">
   <div class="fila0">
-    <button mat-mini-fab>mat-mini-fab</button>
-<a mat-mini-fab routerLink="https://www.arungudelli.com">
-mat-mini-fab</a>
-    <mat-radio-button>asa</mat-radio-button>
-    <button mat-mini-fab>mat-mini-fab</button>
-    <button mdbBtn type="button" color="primary" rounded="true" mdbWavesEffect>Primary</button>
+    <div>
+      <h1>Listopia</h1>
+    </div>
+    <div><button mat-flat-button  class="boton" (click)="getSearchBooks(rings)">Romance<mat-icon class="icono">favorite</mat-icon></button></div> 
+    <div><button mat-flat-button  class="boton" (click)="getSearchBooks(fantasy)">Fantasía<mat-icon>flash_on</mat-icon></button></div> 
+    <div><button mat-flat-button  class="boton" (click)="getSearchBooks(historical)">Historia<mat-icon>history_edu</mat-icon></button></div> 
+    <div><button mat-flat-button  class="boton" (click)="getSearchBooks(mystery)">Misterio<mat-icon >favorite</mat-icon></button></div> 
+    <div><button mat-flat-button  class="boton" (click)="getSearchBooks(thriller)">Suspense<mat-icon>sentiment_very_dissatisfied</mat-icon></button></div> 
+    <div><button mat-flat-button  class="boton" (click)="getSearchBooks(science)">Ciencia<mat-icon>biotech</mat-icon></button></div> 
+    <div><button mat-flat-button  class="boton" (click)="getSearchBooks(sciFi)">Ciencia Ficción<mat-icon>android</mat-icon></button></div> 
+    <div><button mat-flat-button  class="boton" (click)="getSearchBooks(travel)">Viajes<mat-icon>luggage</mat-icon></button></div> 
+    <div><button mat-flat-button  class="boton" (click)="getSearchBooks(sport)">Deportes<mat-icon>fitness_center</mat-icon></button></div> 
+    <div><button mat-flat-button  class="boton" (click)="getSearchBooks(pets)">Animales<mat-icon>pets</mat-icon></button></div> 
+
+    
+
     Lorem fistrum ese que llega diodenoo incididunt magna quis va usté muy cargadoo velit llevame al sircoo labore. Ahorarr por la gloria de mi madre aliqua sed sed ut occaecat nostrud incididunt. Hasta luego Lucas condemor consequat irure nisi caballo blanco caballo negroorl pecador dolor te voy a borrar el cerito magna. Ad irure ahorarr no puedor la caidita. Esse sed aliquip officia ese hombree fistro no puedor elit. Nisi tempor ad consectetur no puedor me cago en tus muelas condemor benemeritaar.
 
       Qué dise usteer está la cosa muy malar quis sit amet sexuarl de la pradera ad quis ad. Me cago en tus muelas ex fistro occaecat está la cosa muy malar fistro. Amatomaa nisi a gramenawer veniam qui al ataquerl. La caidita quietooor et adipisicing caballo blanco caballo negroorl no puedor reprehenderit la caidita. Minim commodo a peich tempor aliquip mamaar. Ut la caidita occaecat dolore laboris veniam et labore hasta luego Lucas esse. Adipisicing irure incididunt ese pedazo de magna te voy a borrar el cerito caballo blanco caballo negroorl pecador veniam al ataquerl papaar papaar. Occaecat aliquip irure fistro te va a hasé pupitaa sit amet.
@@ -19,9 +29,12 @@ mat-mini-fab</a>
   </div>
   <div class="fila1">
 
+<div *ngFor="let book of books">
+  <p>{{book.volumeInfo.title}}</p>
+
+</div>
 
 
-hgf
   </div>
 </div>
 

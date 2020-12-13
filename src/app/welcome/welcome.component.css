@@ -47,3 +47,18 @@ html, body {
   
   
 }
+.boton{
+  width: 90%;
+ 
+  text-align: left;
+  background-color: red;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.icono{
+  text-align: right;
+  align-items: flex-end;
+ 
+}
