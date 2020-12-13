@@ -21,7 +21,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete'
 import { MatChipsModule } from '@angular/material/chips'
 import {MatGridListModule} from '@angular/material/grid-list'
 
-
 const MaterialComponents: any[] | Type<any> | ModuleWithProviders<{}> = [];
 
 @NgModule({

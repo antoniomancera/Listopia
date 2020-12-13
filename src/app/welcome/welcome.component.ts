@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouteConfigLoadStart } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Datafilms } from '../interfaces/datafilms';
 import { Book, DateBooks } from '../interfaces/date-books';
@@ -15,6 +16,7 @@ titulo:string;
 databooks:DateBooks;
 
 rings:string="rings";
+prueba:string=this.rings.substring(0,2);
   constructor(private GoodreadsService:GoodreadsService) { }
 
   ngOnInit() {}
@@ -22,6 +24,7 @@ rings:string="rings";
   getSearchBooks(search:string){
     this.GoodreadsService.getBooks(search).subscribe(data=>{
       this.books=data.items;
+     
       for(let book of this.books){
         this.GoodreadsService.getFilms(book.volumeInfo.title).subscribe(data=>{
          

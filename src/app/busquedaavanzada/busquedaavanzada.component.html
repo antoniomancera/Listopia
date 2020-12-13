@@ -1,30 +1,65 @@
-<p>busquedaavanzada works!</p>
 
+          
+          
+<div id="busqueda" fxLayout="row">
+  <mat-form-field>
+    <mat-label>
+      Introduzca isbn
+    </mat-label>
+    <input matInput id="busquedaisbn" [(ngModel)]="isbn" (keyup)="buscarporIsbn(isbn)">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>
+      Introduzca autor
+    </mat-label>
+    <input matInput id="busquedagenero" [(ngModel)]="author" (keyup)="buscarporAutor(author)">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>
+      Introduzca género
+    </mat-label>
+    <input matInput id="busquedagenero"  [(ngModel)]="genero" (keyup)="buscarporGenero(genero)">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>
+      Introduzca editorial
+    </mat-label>
+    <input matInput id="busquedaeditorial"  [(ngModel)]="editorial" (keyup)="buscarporEditorial(editorial)">
+  </mat-form-field>
+</div>
+         
 
+<div class="contenedor" *ngFor="let book of books" >
+  <mat-card class="mat-elevation-10">
+    <mat-card-header>
+      <mat-card-title>{{book.volumeInfo.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content >
+      <div fxLayout="row">            
+        <div  fxFlex="130px" *ngIf="book.volumeInfo.imageLinks!==undefined">
+          <img src={{book.volumeInfo.imageLinks.thumbnail}}>
+          <p></p>              
+        </div>
+        <div  fxFlex="100%" *ngIf="book.volumeInfo.authors!==undefined" >
+          <p><strong>Autor:</strong>{{book.volumeInfo.authors[0]}}</p>             
+          <p><strong>Sinopsis:</strong>{{book.volumeInfo.description}}</p>                              
+        </div>
+      </div>
+  
+      
+    </mat-card-content>
+    
+  </mat-card>
 
-<div>Busqueda por isbn<input type="text" id="busquedaisbn"  required
-    minlength="4" maxlength="18" size="10" placeholder="introduzca texto"  [(ngModel)]="isbn" (keyup)="buscarporIsbn(isbn)">
-
-
-    <div>Busqueda por autor<input type="text" id="busquedaautor"  required
-      minlength="4" maxlength="18" size="10" placeholder="introduzca texto"  [(ngModel)]="author" (keyup)="buscarporAutor(author)">
-
-      <div>Busqueda por género<input type="text" id="busquedagenero"  required
-        minlength="4" maxlength="18" size="10" placeholder="introduzca texto"  [(ngModel)]="genero" (keyup)="buscarporGenero(genero)">
-
-        <div>Busqueda por editorial<input type="text" id="busquedaeditorial"  required
-          minlength="4" maxlength="18" size="10" placeholder="introduzca texto"  [(ngModel)]="editorial" (keyup)="buscarporEditorial(editorial)">
-
-
+<!--
 <div *ngFor="let book of books">
     <h4 class="prueba">
         <p> {{book.volumeInfo['title']}}</p>
         <p><img src={{book.volumeInfo.imageLinks.thumbnail}}></p>
-        <!--{{book.volumeInfo.imageLinks['smallThumbnail']}}-->
+     
   <p> {{book.volumeInfo['authors']}}</p>
     </h4>
   </div>
+-->
 
 
-
-</div>

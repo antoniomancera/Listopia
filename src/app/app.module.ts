@@ -25,7 +25,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +45,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     RouterModule,
     RouterModule.forRoot(APP_ROUTES),
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]

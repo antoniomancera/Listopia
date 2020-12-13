@@ -21,14 +21,14 @@ html, body {
 .contenedor {
   display:flex;
   flex-direction: row;
-  min-height:100%;
+ 
 }
 
 
 .fila0{
 
   width: 20%;
-
+  
 }
 .fila1{
 
@@ -37,5 +37,13 @@ html, body {
 
 .mat-card{
   margin-top: 2em;
+  margin-right: 1em;
+  width: 40%;
 
+  
+}
+.mat-card-content{
+  width: max-content;
+  
+  
 }
