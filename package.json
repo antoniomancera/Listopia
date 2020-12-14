@@ -26,6 +26,7 @@
     "angular-star-rating": "^4.0.0-beta.3",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.3",
+    "css-star-rating": "^1.2.4",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "firebase": "^8.1.2",

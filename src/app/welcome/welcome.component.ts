@@ -113,8 +113,8 @@ ngOnInit() {
 
 getSearchBooks(search:string){
     this.GoodreadsService.getBooks(search).subscribe(data=>{
-      this.books=data.items;})}
-      /*for(let book of this.books){
+      this.books=data.items;
+      for(let book of this.books){
         this.GoodreadsService.getFilms(book.volumeInfo.title).subscribe(data=>{
           book.films=data;
         },
@@ -126,8 +126,8 @@ getSearchBooks(search:string){
     },
       error=>console.log(error),
       ()=>console.log(this.books))
-  }*/
 
+  }
 getFilmsrelatedBook(search:string):Datafilms{
   this.GoodreadsService.getFilms(search).subscribe(data=>{
     this.datafilm=data;

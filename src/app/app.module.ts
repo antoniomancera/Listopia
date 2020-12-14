@@ -30,6 +30,9 @@ import { StarRatingModule } from 'angular-star-rating';
 import { RatingModule } from 'ng-starrating';
 import { BusquedapeliculasComponent } from './busquedapeliculas/busquedapeliculas.component';
 
+import { StarComponent } from './star/star.component';
+
+
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import { BusquedapeliculasComponent } from './busquedapeliculas/busquedapelicula
     WelcomeComponent,
     PruebasComponent,
     ContactoComponent,
-    BusquedapeliculasComponent
+    BusquedapeliculasComponent,
+    StarComponent
 
   ],
   imports: [
@@ -54,7 +58,7 @@ import { BusquedapeliculasComponent } from './busquedapeliculas/busquedapelicula
     MaterialModule,
     FlexLayoutModule,
     StarRatingModule,
-    RatingModule
+    StarRatingModule.forRoot()
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]

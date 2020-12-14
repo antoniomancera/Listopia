@@ -1,6 +1,4 @@
 
-          
-          
 <div id="busqueda" fxLayout="row">
   <mat-form-field>
     <mat-label>
@@ -33,7 +31,7 @@
     <input matInput id="busquedaeditorial"  [(ngModel)]="editorial" (keyup)="buscarporEditorial(editorial)">
   </mat-form-field>
 </div>
-         
+
 
 <div class="contenedor" *ngFor="let book of books" >
   <mat-card class="mat-elevation-10">
@@ -41,20 +39,28 @@
       <mat-card-title>{{book.volumeInfo.title}}</mat-card-title>
     </mat-card-header>
     <mat-card-content >
-      <div fxLayout="row">            
+      <div fxLayout="row">
         <div  fxFlex="130px" *ngIf="book.volumeInfo.imageLinks!==undefined">
           <img src={{book.volumeInfo.imageLinks.thumbnail}}>
-          <p *ngIf="book.volumeInfo.averageRating!==undefined">{{book.volumeInfo.averageRating}}</p>              
+          <p *ngIf="book.volumeInfo.averageRating!==undefined">{{book.volumeInfo.averageRating}}</p>
+          <div *ngIf="book.volumeInfo.averageRating!==undefined">
+
+          <ng-container *ngFor="let star of stars" >
+            <app-star [starId]="star" [rating]=" hoverState||3"></app-star>
+           </ng-container>
+          </div>
         </div>
         <div  fxFlex="100%" *ngIf="book.volumeInfo.authors!==undefined" >
-          <p><strong>Autor:</strong>{{book.volumeInfo.authors[0]}}</p>             
-          <p><strong>Sinopsis:</strong>{{book.volumeInfo.description}}</p>                              
+          <p><strong>Autor:</strong>{{book.volumeInfo.authors[0]}}</p>
+          <p><strong>Sinopsis:</strong>{{book.volumeInfo.description}}</p>
+
+
         </div>
       </div>
-  
-      
+
+
     </mat-card-content>
-    
+
   </mat-card>
 </div>
 <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
@@ -63,7 +69,7 @@
     <h4 class="prueba">
         <p> {{book.volumeInfo['title']}}</p>
         <p><img src={{book.volumeInfo.imageLinks.thumbnail}}></p>
-     
+
   <p> {{book.volumeInfo['authors']}}</p>
     </h4>
   </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 
 import { DateBooks,Book } from '../interfaces/date-books';
 import { GoodreadsService} from '../services/goodreads.service';
@@ -20,6 +21,11 @@ prueba:any;
   books:Book[];
   dateBook:DateBooks;
   unodiez:number[]=[0,1,2,3,4,5,6,7,8,9];
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  stars=[1,2,3,4,5];
+  rating=0;
+  hoverState=0;
   constructor(private GoodreadsService:GoodreadsService) { }
 
   ngOnInit(): void {
