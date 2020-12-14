@@ -1,19 +1,19 @@
 
 .navbar{
     justify-content: space-between;
-    background-color: rgb(62, 141, 146);
-    color: rgb(201, 170, 71);
+    background-color: #00cca3;
+    color: #ffc808;
 }
 .mat-nav-list{
     justify-content: space-between;
-    background-color: rgb(62, 141, 146);
-    color: rgb(201, 170, 71);
+    background-color: #00cca3;
+    color: #ffc808;
 }
  span{
     padding-right: 1rem;
 }
 a{
-    color: rgb(201, 170, 71); 
+    color: #ffc808;
     padding-right: 1rem;
-  
+
 }

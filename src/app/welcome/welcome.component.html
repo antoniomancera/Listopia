@@ -101,7 +101,12 @@
           <div fxLayout="row">
             <div  fxFlex="130px" *ngIf="book.volumeInfo.imageLinks!==undefined">
               <img src={{book.volumeInfo.imageLinks.thumbnail}}>
-              <p *ngIf="book.volumeInfo.averageRating!==undefined">{{book.volumeInfo.averageRating}}</p>
+              <div   *ngIf="book.volumeInfo.averageRating!==undefined">
+                <ng-container  *ngFor="let star of stars" >
+                  <app-star width="1000px" [starId]="star" [rating]=" hoverState||book.volumeInfo.averageRating"></app-star>
+                </ng-container>
+              </div>
+
             </div>
             <div  fxFlex="100%" *ngIf="book.volumeInfo.authors!==undefined" >
               <p><strong>Autor:</strong>{{book.volumeInfo.authors[0]}}</p>

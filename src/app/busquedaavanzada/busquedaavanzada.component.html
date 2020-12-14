@@ -43,10 +43,10 @@
         <div  fxFlex="130px" *ngIf="book.volumeInfo.imageLinks!==undefined">
           <img src={{book.volumeInfo.imageLinks.thumbnail}}>
           <p *ngIf="book.volumeInfo.averageRating!==undefined">{{book.volumeInfo.averageRating}}</p>
-          <div *ngIf="book.volumeInfo.averageRating!==undefined">
+          <div   *ngIf="book.volumeInfo.averageRating!==undefined">
 
-          <ng-container *ngFor="let star of stars" >
-            <app-star [starId]="star" [rating]=" hoverState||3"></app-star>
+          <ng-container  *ngFor="let star of stars" >
+            <app-star width="1000px" [starId]="star" [rating]=" hoverState||book.volumeInfo.averageRating"></app-star>
            </ng-container>
           </div>
         </div>

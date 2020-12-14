@@ -20,8 +20,13 @@
         <div fxLayout="row">
           <div class="image"  fxFlex="130px" >
            <p><img src="https://image.tmdb.org/t/p/w1280/{{film.poster_path}}" width="130px" ></p>
-            <p >
-                {{film.vote_average}}</p>
+
+              <ng-container  *ngFor="let star of stars" >
+                <app-star  [starId]="star" [rating]=" hoverState||film.vote_average/2"></app-star>
+              </ng-container>
+
+
+
           </div>
           <div  fxFlex="100%"  >
             <p><strong>Sinopsis: </strong>{{film.overview}}</p>

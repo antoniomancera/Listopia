@@ -18,7 +18,7 @@ export class StarComponent implements OnInit {
   ngOnInit() {
     console.log('One', this.starId);
     console.log('Two', this.rating);
-    this.starClassName = "star-rating-filled";
+    //this.starClassName = "star-rating-filled";
 
     if (this.rating >= this.starId) {
       this.starClassName = "star-rating-filled";

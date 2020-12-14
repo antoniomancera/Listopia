@@ -1,7 +1,9 @@
 .star-rating-filled {
   fill: gold;
+  width: 20%;
 }
 
 .star-rating-blank {
   fill: #696262;
+  width: 20%;
 }

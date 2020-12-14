@@ -79,6 +79,10 @@ isbnKarenina:number=9781593080273;
 karenina:Book;
 recomendaciones:Book[]=[];
 
+
+stars=[1,2,3,4,5];
+  rating=0;
+  hoverState=0;
 constructor(private GoodreadsService:GoodreadsService) { }
 
 ngOnInit() {
