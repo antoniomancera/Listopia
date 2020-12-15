@@ -1,9 +1,14 @@
 
 .navbar{
     justify-content: space-between;
+<<<<<<< HEAD
     background-color: #01c5b1;
    /*color: #ffe010;*/
    color:#ECF024;
+=======
+    background-color: #9ad3bc;
+   color:#f5b461;
+>>>>>>> 78610628c0c3c78886b01b9dcd9f5de10c1190be
 }
 .mat-nav-list{
     justify-content: space-between;
