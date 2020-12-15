@@ -9,6 +9,7 @@ export interface film{
   adult:boolean,
   backdrop_path:string,
   genre_id:number[],
+  genre:string[],
   id:number,
   original_language: string,
   original_title: string,

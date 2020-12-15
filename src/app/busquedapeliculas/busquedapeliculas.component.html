@@ -1,42 +1,60 @@
 
 
-<div id="busqueda" fxLayout="row">
-    <mat-form-field>
-        <mat-label>
-            Introduzca título
-        </mat-label>
-        <input matInput  [(ngModel)]="titulo" (keyup)="getPeliculas(titulo)">
-    </mat-form-field>
-</div>
+    <div id="busqueda" fxLayout="row">
+        <mat-form-field>
+            <mat-label>
+                Introduzca título
+            </mat-label>
+            <input matInput  [(ngModel)]="titulo" (keyup)="getPeliculas(titulo)">
+        </mat-form-field>
+    </div>
 
 
 
-<div class="contenedor" *ngFor="let film of films" >
-    <mat-card class="mat-elevation-10">
-      <mat-card-header>
-        <mat-card-title>{{film.original_title}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content >
-        <div fxLayout="row">
-          <div class="image"  fxFlex="130px" >
-           <p><img src="https://image.tmdb.org/t/p/w1280/{{film.poster_path}}" width="130px" ></p>
+    <div class="contenedor" *ngFor="let film of films" >
+        <mat-card class="mat-elevation-10">
+          <mat-card-header>
+            <mat-card-title>{{film.original_title}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content >
+            <div fxLayout="row">
+              <div class="image"  fxFlex="130px" >
+              <p><img src="https://image.tmdb.org/t/p/w1280/{{film.poster_path}}" width="130px" ></p>
 
-              <ng-container  *ngFor="let star of stars" >
-                <app-star  [starId]="star" [rating]=" hoverState||film.vote_average/2"></app-star>
-              </ng-container>
-
-
-
-          </div>
-          <div  fxFlex="100%"  >
-            <p><strong>Sinopsis: </strong>{{film.overview}}</p>
-            <!--<p><strong>Autor:</strong>{{book.volumeInfo.authors[0]}}</p>
-            <p><strong>Sinopsis:</strong>{{book.volumeInfo.description}}</p>-->
-          </div>
-        </div>
+                  <ng-container  *ngFor="let star of stars" >
+                    <app-star  [starId]="star" [rating]=" hoverState||film.vote_average"></app-star>
+                  </ng-container>
 
 
-      </mat-card-content>
 
-    </mat-card>
-  </div>
+              </div>
+              <div  fxFlex="100%"  >
+                <p><strong>Sinopsis: </strong>{{film.overview}}</p>
+                <p><strong>Idioma:</strong>{{film.original_language}}</p>
+                <p *ngIf="film.adult!==undefined&&!film.adult">
+                  <strong>Apto para todos los públicos</strong>
+                </p>
+                <!--<p><strong>Autor:</strong>{{book.volumeInfo.authors[0]}}</p>
+                <p><strong>Sinopsis:</strong>{{book.volumeInfo.description}}</p>-->
+              </div>
+            </div>
+
+
+          </mat-card-content>
+
+        </mat-card>
+      </div>
+
+
+  <!--   <div><button mat-flat-button  class="boton" (click)="getPeliculas(fantasy)">Romance<mat-icon class="icono">favorite</mat-icon></button></div>
+     <div><button mat-flat-button  class="boton" (click)="getPeliculas(fantasy)">Fantasía<mat-icon>flash_on</mat-icon></button></div>
+     <div><button mat-flat-button  class="boton" (click)="getPeliculas(historical)">Historia<mat-icon>history_edu</mat-icon></button></div>
+     <div><button mat-flat-button  class="boton" (click)="getPeliculas(mystery)">Misterio<mat-icon >favorite</mat-icon></button></div>
+     <div><button mat-flat-button  class="boton" (click)="getPeliculas(thriller)">Suspense<mat-icon>sentiment_very_dissatisfied</mat-icon></button></div>
+     <div><button mat-flat-button  class="boton" (click)="getPeliculas(science)">Ciencia<mat-icon>biotech</mat-icon></button></div>
+     <div><button mat-flat-button  class="boton" (click)="getPeliculas(sciFi)">Ciencia Ficción<mat-icon>android</mat-icon></button></div>
+     <div><button mat-flat-button  class="boton" (click)="getPeliculas(travel)">Viajes<mat-icon>flight_takeoff</mat-icon></button></div>
+     <div><button mat-flat-button  class="boton" (click)="getPeliculas(sport)">Deportes<mat-icon>fitness_center</mat-icon></button></div>
+     <div><button mat-flat-button  class="boton" (click)="getPeliculas(pets)">Animales<mat-icon>pets</mat-icon></button></div>
+
+-->

@@ -5,11 +5,31 @@
   text-align: -webkit -center;
 }
 
+.boton{
+  width: 90%;
+
+  text-align: left;
+  background-color:#01c5b1;
+  color:#ffe010;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.fila0{
+
+  width: 20%;
+
+}
+.fila1{
+
+  width: 80%;
+}
 .mat-card{
   width: 100%;
   margin-top: 1em;
-
-  background-color: rgb(223, 152, 152);
+background-color: #ff9c38;
+  /*background-color: #d5a034;*/
   border-color: seagreen;
 }
 

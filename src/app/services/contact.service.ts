@@ -6,8 +6,10 @@ import { map, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ContactService {
-private api='https://mailthis.to/listopiaeoi@gmail.com'
+//private api='https://mailthis.to/listopiaeoi@gmail.com'
 //private api='listopiacontact@listopia-297523.iam.gserviceaccount.com'
+//private api='https://mailthis.to/antoniomanuelmancerahevilla@gmail.com'
+private api='https://mailthis.to/antoniomancera'
   constructor(private http:HttpClient) { }
   PostMessage(input:any){
    return this.http.post(this.api,input, {responseType: 'text'}).pipe(

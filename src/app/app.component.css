@@ -1,13 +1,12 @@
 
 .navbar{
     justify-content: space-between;
-    background-color: #00cca3;
-    color: #ffc808;
+    background-color: #01c5b1;
+   color: #ffe010;
 }
 .mat-nav-list{
     justify-content: space-between;
-    background-color: #00cca3;
-    color: #ffc808;
+
 }
  span{
     padding-right: 1rem;

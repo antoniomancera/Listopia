@@ -75,9 +75,13 @@
         </mat-card-header>
         <mat-card-content >
           <div fxLayout="row">
-            <div  fxFlex="130px" *ngIf="book.volumeInfo.imageLinks!==undefined">
+            <div  fxFlex="130px" >
               <img src={{book.volumeInfo.imageLinks.thumbnail}}>
-              <p *ngIf="book.volumeInfo.averageRating!==undefined">{{book.volumeInfo.averageRating}}</p>
+
+                <ng-container  *ngFor="let star of stars" >
+                  <app-star width="1000px" [starId]="star" [rating]=" hoverState||5"></app-star>
+                </ng-container>
+
             </div>
             <div  fxFlex="100%" *ngIf="book.volumeInfo.authors!==undefined" >
               <p><strong>Autor:</strong>{{book.volumeInfo.authors[0]}}</p>

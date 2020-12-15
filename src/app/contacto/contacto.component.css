@@ -1,7 +1,8 @@
 mat-card {
     max-width: 40%;
     margin: 2em auto;
-    text-align: -webkit-center; 
+    text-align: -webkit-center;
+    background-color: #f3ede7;
 }
 .titulo{
    text-align: center;
@@ -13,7 +14,7 @@ mat-radio-button{
 }
 
 table{
-    text-align: center; 
+    text-align: center;
     margin-left: auto;
   margin-right: auto;
   border-spacing: 2em;
