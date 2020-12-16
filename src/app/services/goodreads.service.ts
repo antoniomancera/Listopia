@@ -29,9 +29,6 @@ keygoogle:string="AIzaSyB8g-064mS_49knthDIKQPx7ju_6W3AFHU";
 moviedatabe:string="036575fed00442456ce9dbf4746b4db4";
 rapidkey:string="893a376d74msh10e81548c875a18p1b66c2jsn17ca06b931c1";
 
-  public getBook(): Observable<DateBooks>{
-    return this.http.get<DateBooks>('https://www.googleapis.com/books/v1/volumes?q=filibusterismo');
-  }
 
   public getBooks(busqueda:string): Observable<DateBooks>{
     return this.http.get<DateBooks>(`https://www.googleapis.com/books/v1/volumes?q=${busqueda}&maxResults=40`);
@@ -46,10 +43,6 @@ rapidkey:string="893a376d74msh10e81548c875a18p1b66c2jsn17ca06b931c1";
     return this.http.get<DateBooks>(`https://www.googleapis.com/books/v1/volumes?q= +inauthor:${busqueda}`);
 
   }
-  public getBooksauthor1(busqueda:string): Observable<DateBooks>{
-    return this.http.get<DateBooks>(`https://www.googleapis.com/books/v1/volumes?q= +inauthor:tolkien&key=AIzaSyB8g-064mS_49knthDIKQPx7ju_6W3AFHU`);
-
-  }
 
   public getBooksgenre(genre:string): Observable<DateBooks>{
     return this.http.get<DateBooks>(`https://www.googleapis.com/books/v1/volumes?q=subject:${genre}`);
@@ -61,15 +54,7 @@ rapidkey:string="893a376d74msh10e81548c875a18p1b66c2jsn17ca06b931c1";
 
   }
 
-public getBooks3(busqueda:string): Observable<DateBooks>{
-  return this.http.get<DateBooks>(  `https://www.googleapis.com/books/v1/volumes?q=${busqueda}&maxResults=40`);
 
-}
-
-  public getBook2s(): Observable<Book>{
-    return this.http.get<Book>('https://www.googleapis.com/books/v1/volumes?q=filibusterismo');
-
-  }
 
 public getBooksOpen():Observable<OpenDataBooks>{
   return this.http.get<OpenDataBooks>('http://openlibrary.org/search.json?q=the+lord+of+the+rings');

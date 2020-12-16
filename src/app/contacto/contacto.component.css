@@ -1,8 +1,9 @@
 mat-card {
     max-width: 40%;
+    max-height: 80%;
     margin: 2em auto;
     text-align: -webkit-center;
-    background-color: #f3ede7;
+    background-color: #5cdb95;
 }
 .titulo{
    text-align: center;
@@ -24,4 +25,21 @@ table{
 }
 .full-width{
     width: 100%;
+}
+input{
+background-color: #EDF5E1;
+width: 70%;
+}
+::placeholder{
+  color:#05386B;
+}
+mat-label{
+color: #05386B;
+}
+textarea{
+  background-color: #EDF5E1;
+}
+.btsubmit{
+  color: #5cdb95;
+  background-color: #05386B;
 }

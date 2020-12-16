@@ -9,15 +9,17 @@
         <mat-label>
           Introduzca su email
         </mat-label>
-        <input matInput type="email" class="form-control" name="Email" aria-describedby="emailHelp" placeholder="Enter email"formControlName="Email">
-
+        <p>
+          <input matInput type="email" class="form-control" name="Email" aria-describedby="emailHelp" placeholder="Enter email"formControlName="Email">
+        </p>
       </tr>
       <tr>
         <mat-label>
           Introduzca su nombre
         </mat-label>
-        <input matInput type="text" class="form-control" name="Fullname" placeholder="Full Name" formControlName="Fullname">
-
+        <p>
+         <input matInput type="text" class="form-control" name="Fullname" placeholder="Full Name" formControlName="Fullname">
+        </p>
       </tr>
       <tr>
         <mat-label>
@@ -30,7 +32,7 @@
       </mat-form-field>
       </tr>
       <tr>
-        <button type="submit" class="btn btn-primary" [disabled]="!FormData.valid">Submit</button>
+        <button mat-raised-button type="submit" class="btsubmit" [disabled]="!FormData.valid">Submit</button>
 
       </tr>
     </table>
