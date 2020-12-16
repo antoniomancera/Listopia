@@ -42,13 +42,14 @@ html, body {
 .boton{
   width: 90%;
 
-  text-align: left;
-  background-color:#6E16C4;
-  color:#C1C40C;
+
+  background-color: #05386B;
+  /*background-color:#6E16C4;*/
+  color:#5cdb95;
   margin-left: 1%;
- 
+
   margin-top: 1%;
- 
+
 }
 
 .mat-divider{
@@ -56,8 +57,8 @@ html, body {
   margin-bottom: 2em;
 }
 
-.icon{
-  font-size:10px;
+.icono{
+  text-align: left;
 }
 
 .origin{
@@ -70,7 +71,7 @@ html, body {
   text-align: center;
   margin-left: auto;
  margin-right: auto;
- 
+
  }
 
  mat-form-field{
@@ -80,8 +81,8 @@ html, body {
  .mat-card{
   width: 100%;
   margin-top: 1%;
-  margin-left: 1%;
-  background-color: #ede6f0;
+
+  background-color: #EDF5E1;
   border-color: seagreen;
 }
 
@@ -93,7 +94,7 @@ margin-right: auto;
 }
 
 .bubble{
-  background-color: #e9dbdb;
+  background-color:  #8EE4AF;
   border-radius: 5px;
   box-shadow: 0 0 6px #B2B2B2;
   display: inline-block;
@@ -109,4 +110,8 @@ margin-right: auto;
 .input{
   margin-right: 1%;
   size: 50%;
+}
+.genero{
+  text-align: left;
+
 }

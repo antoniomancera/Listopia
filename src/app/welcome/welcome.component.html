@@ -8,7 +8,7 @@
     <mat-divider></mat-divider>
     <div class="origin">
       <h1>Géneros</h1></div>
-    <div><button mat-flat-button  class="boton" (click)="getSearchBooks(rings)">Romance<mat-icon class="icono">favorite</mat-icon></button></div>
+    <div><button mat-flat-button  class="boton" (click)="getSearchBooks(rings)"><ng-container class="genero">Romance</ng-container><mat-icon class="icono">favorite</mat-icon></button></div>
     <div><button mat-flat-button  class="boton" (click)="getSearchBooks(fantasy)">Fantasía<mat-icon>flash_on</mat-icon></button></div>
     <div><button mat-flat-button  class="boton" (click)="getSearchBooks(historical)">Historia<mat-icon>history_edu</mat-icon></button></div>
     <div><button mat-flat-button  class="boton" (click)="getSearchBooks(mystery)">Misterio<mat-icon >favorite</mat-icon></button></div>
@@ -79,7 +79,7 @@
               <img src={{book.volumeInfo.imageLinks.thumbnail}}>
 
                 <ng-container  *ngFor="let star of stars" >
-                  <app-star width="1000px" [starId]="star" [rating]=" hoverState||5"></app-star>
+                  <app-star  [starId]="star" [rating]=" hoverState||5"></app-star>
                 </ng-container>
 
             </div>

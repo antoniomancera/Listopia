@@ -8,7 +8,7 @@ export interface Datafilms {
 export interface film{
   adult:boolean,
   backdrop_path:string,
-  genre_id:number[],
+  genre_ids:number[],
   genre:string[],
   id:number,
   original_language: string,

@@ -1,11 +1,9 @@
 
 .navbar{
     justify-content: space-between;
-    background-color: #01c5b1;
+    background-color:  #05386B;
    /*color: #ffe010;*/
-
-    background-color: #9ad3bc;
-   color:#f5b461;
+   color:#5cdb95;
 }
 .mat-nav-list{
     justify-content: space-between;

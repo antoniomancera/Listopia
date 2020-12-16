@@ -23,6 +23,7 @@
 
                   <ng-container  *ngFor="let star of stars" >
                     <app-star  [starId]="star" [rating]=" hoverState||film.vote_average"></app-star>
+
                   </ng-container>
 
 
@@ -34,6 +35,11 @@
                 <p *ngIf="film.adult!==undefined&&!film.adult">
                   <strong>Apto para todos los públicos</strong>
                 </p>
+
+                <strong>Géneros:</strong><ng-container *ngFor="let gen of film.genre">
+                  {{gen}}
+                </ng-container>
+
                 <!--<p><strong>Autor:</strong>{{book.volumeInfo.authors[0]}}</p>
                 <p><strong>Sinopsis:</strong>{{book.volumeInfo.description}}</p>-->
               </div>
